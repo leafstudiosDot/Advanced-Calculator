@@ -1,8 +1,14 @@
+import java.awt.Frame;
 
-public class Main {
+public class Main extends Frame {
 
-	public static void main(String[] args) {
-
+	Main() {
+		setTitle("Advanced Calculator");
+		setSize(480, 360);
+		setVisible(true);
 	}
 
+	public static void main(String[] args) {
+		Main f = new Main();
+	}
 }
