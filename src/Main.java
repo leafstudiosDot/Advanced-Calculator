@@ -4,9 +4,11 @@ import java.awt.Frame;
 public class Main extends Frame {
 
 	Main() {
-		Button addButton = new Button("Add");
-		addButton.setBounds(0, 330, 80, 30);
+		Button addButton = new Button("Add Container");
+		addButton.setBounds(0, 330, 120, 30);
 		add(addButton);
+
+		add(InputPanel.GetInputPanel());
 
 		setTitle("Advanced Calculator");
 		setSize(480, 360);
