@@ -9,6 +9,8 @@ public class InputPanel {
 		Choice math = new Choice();
 		math.add("+");
 		math.add("-");
+		math.add("x");
+		math.add("÷");
 		p.add(math);
 
 		p.setBounds(0, 30, 480, 30);
