@@ -4,7 +4,7 @@ import java.awt.Panel;
 import java.awt.TextField;
 
 public class InputPanel {
-	public static Component GetInputPanel() {
+	public static Component GetInputPanel(int y) {
 		Panel p = new Panel();
 
 		TextField num1 = new TextField(5);
@@ -20,7 +20,7 @@ public class InputPanel {
 		TextField num2 = new TextField(5);
 		p.add(num2);
 
-		p.setBounds(0, 30, 480, 30);
+		p.setBounds(0, y, 480, 30);
 		return p;
 	}
 }

@@ -1,17 +1,24 @@
 import java.awt.Button;
 import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main extends Frame {
 
 	Main() {
 		Button addButton = new Button("Add Container");
 		addButton.setBounds(0, 330, 120, 30);
+		addButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Added Input Panel");
+			}
+		});
 		add(addButton);
-
-		add(InputPanel.GetInputPanel());
+		add(InputPanel.GetInputPanel(30));
 
 		setTitle("Advanced Calculator");
 		setSize(480, 360);
+		setResizable(false);
 		setLayout(null);
 		setVisible(true);
 	}
