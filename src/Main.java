@@ -5,11 +5,15 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import menubar.MenuBarC;
+
 public class Main extends Frame {
 	static int inpCount = 1;
 	static Button addButton;
 
 	Main() {
+		setMenuBar(MenuBarC.GetMenuBar());
+
 		addButton = new Button("Add Container");
 		addButton.setBounds(0, 330, 120, 30);
 		addButton.addActionListener(new ActionListener() {
