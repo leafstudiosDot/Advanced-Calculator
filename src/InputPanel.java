@@ -38,23 +38,38 @@ public class InputPanel {
 		Button equals = new Button("=");
 		p.add(equals);
 
+		TextField num3 = new TextField(5);
+		num3.setEditable(false);
+		p.add(num3);
+
 		equals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Double no1 = Double.parseDouble(num1.getText());
 					Double no2 = Double.parseDouble(num2.getText());
-					// case c.getSelectedIndex()
-					System.out.println(math.getItem(math.getSelectedIndex()));
+					switch (math.getItem(math.getSelectedIndex())) {
+					case "+":
+						num3.setText(Double.toString(no1 + no2));
+						break;
+					case "-":
+						num3.setText(Double.toString(no1 - no2));
+						break;
+					case "x":
+						num3.setText(Double.toString(no1 * no2));
+						break;
+					case "÷":
+						num3.setText(Double.toString(no1 / no2));
+						break;
+					default:
+						ErrorDial errdial = new ErrorDial("Unknown Operation");
+					}
+					// System.out.println(math.getItem(math.getSelectedIndex()));
 				} catch (Exception e1) {
 					ErrorDial errdial = new ErrorDial("An error has occurred returning result");
 					System.out.println(e1);
 				}
 			}
 		});
-
-		TextField num3 = new TextField(5);
-		num3.setEditable(false);
-		p.add(num3);
 
 		p.setBounds(0, y, 480, 30);
 		return p;
