@@ -29,5 +29,8 @@ class MenuItemListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Menu pressed: " + e.getActionCommand());
+		if (e.getActionCommand() == "About Software") {
+			AboutWindow aw = new AboutWindow();
+		}
 	}
 }
