@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Main extends Frame {
+	static int inpCount = 1;
 
 	Main() {
 		Button addButton = new Button("Add Container");
@@ -11,9 +12,18 @@ public class Main extends Frame {
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Added Input Panel");
+				inpCount = inpCount + 1;
+				System.out.println(inpCount);
+				add(InputPanel.GetInputPanel(30 * inpCount));
+				if (inpCount == 10) {
+					addButton.enable(false);
+				}
+				validate();
+				repaint();
 			}
 		});
 		add(addButton);
+
 		add(InputPanel.GetInputPanel(30));
 
 		setTitle("Advanced Calculator");
