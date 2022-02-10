@@ -1,3 +1,4 @@
+import java.awt.Button;
 import java.awt.Choice;
 import java.awt.Component;
 import java.awt.Label;
@@ -5,9 +6,11 @@ import java.awt.Panel;
 import java.awt.TextField;
 
 public class InputPanel {
-	private static Panel p = new Panel();
-
 	public static Component GetInputPanel(int y) {
+		Panel p = new Panel();
+
+		Button DeleteRowBtn = new Button("X");
+		p.add(DeleteRowBtn);
 
 		TextField num1 = new TextField(5);
 		p.add(num1);
@@ -31,9 +34,5 @@ public class InputPanel {
 
 		p.setBounds(0, y, 480, 30);
 		return p;
-	}
-
-	public void DeleteRow() {
-		p.setVisible(false);
 	}
 }
