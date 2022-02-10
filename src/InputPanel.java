@@ -4,12 +4,21 @@ import java.awt.Component;
 import java.awt.Label;
 import java.awt.Panel;
 import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class InputPanel {
 	public static Component GetInputPanel(int y) {
 		Panel p = new Panel();
 
 		Button DeleteRowBtn = new Button("X");
+		DeleteRowBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.inpCount = Main.inpCount - 1;
+				Main.addButton.enable();
+				p.setVisible(false);
+			}
+		});
 		p.add(DeleteRowBtn);
 
 		TextField num1 = new TextField(5);

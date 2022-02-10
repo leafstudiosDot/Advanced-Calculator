@@ -7,9 +7,10 @@ import java.awt.event.WindowEvent;
 
 public class Main extends Frame {
 	static int inpCount = 1;
+	static Button addButton;
 
 	Main() {
-		Button addButton = new Button("Add Container");
+		addButton = new Button("Add Container");
 		addButton.setBounds(0, 330, 120, 30);
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
